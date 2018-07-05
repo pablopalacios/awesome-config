@@ -311,6 +311,23 @@ awful.rules.rules = {
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { floating = true }},
+
+    { rule = { class = "Emacs" },
+      properties = { tag = wsCode }},
+    { rule = { class = "Firefox" },
+      properties = { tag = wsWeb }},
+    { rule = { class = "libreoffice-writer" },
+      properties = { tag = wsDocs }},
+    { rule = { class = "libreoffice-calc" },
+      properties = { tag = wsDocs }},
+    { rule = { class = "Evince" },
+      properties = { tag = wsDocs }},
+    { rule = { class = "Nautilus" },
+      properties = { tag = wsDocs }},
+    { rule = { class = "Zeal" },
+      properties = { tag = wsDocs }},
+    { rule = { class = "Thunderbird" },
+      properties = { tag = wsMail }},
 }
 -- }}}
 
