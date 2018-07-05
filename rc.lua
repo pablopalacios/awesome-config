@@ -38,6 +38,14 @@ editor = "emacsclient"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
+wsTerm = "1"
+wsCode = "2"
+wsWeb = "3"
+wsDocs = "4"
+wsMail = "5"
+wsMusic = "6"
+wsMisc = "7"
+
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile.bottom,
@@ -55,7 +63,7 @@ mytextclock = wibox.widget.textclock()
 -- Create a wibox for each screen and add it
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ wsTerm, wsCode, wsWeb, wsDocs, wsMail, wsMusic, wsMisc }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -213,8 +221,8 @@ clientkeys = gears.table.join(
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+-- This should map on the top row of your keyboard, usually 1 to 7.
+for i = 1, 7 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
